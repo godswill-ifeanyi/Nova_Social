@@ -17,30 +17,16 @@
 </head>
 <body class="antialiased text-slate-800 bg-gradient-to-b from-sky-50 via-white to-indigo-50 min-h-screen">
   <!-- NAV -->
-  <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-600 to-purple-500 flex items-center justify-center text-white font-bold shadow-lg">N</div>
-      <div class="hidden sm:block">
-        <h1 class="text-lg font-semibold">NovaCMS</h1>
-        <p class="text-xs text-slate-500">Content management reimagined</p>
-      </div>
-    </a>
-
-    <nav class="hidden md:flex items-center gap-6 text-sm">
-      <a href="#features" class="hover:text-indigo-600">Features</a>
-      <a href="#editor" class="hover:text-indigo-600">Editor</a>
-      <a href="#pricing" class="hover:text-indigo-600">Pricing</a>
-      <a href="#docs" class="hover:text-indigo-600">Docs</a>
-    </nav>
-
-    <div class="flex items-center gap-3">
-      <a href="{{ route('login') }}" class="text-sm px-4 py-2 rounded-md">Log in</a>
-      <a href="{{ route('register') }}" class="text-sm px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:shadow-lg">Get started</a>
-      <button class="ml-3 p-2 rounded-full hover:bg-white/60 glass hidden md:inline-flex">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 3a1 1 0 000 2h10a1 1 0 100-2H5zM4 7a2 2 0 012-2h8a2 2 0 012 2v7a2 2 0 01-2 2H6a2 2 0 01-2-2V7zm6 2a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>
-      </button>
-    </div>
-  </header>
+  <x-header> 
+    <x-slot name="nav">
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#features" class="hover:text-indigo-600">Features</a>
+        <a href="#editor" class="hover:text-indigo-600">Editor</a>
+        <a href="#pricing" class="hover:text-indigo-600">Pricing</a>
+        <a href="#docs" class="hover:text-indigo-600">Docs</a>
+      </nav>
+    </x-slot>
+  </x-header>
 
   <!-- HERO -->
   <main class="max-w-7xl mx-auto px-6">
@@ -198,40 +184,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-10 text-sm text-slate-500">
-      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div>
-          <h6 class="font-semibold text-slate-900">NovaCMS</h6>
-          <p class="mt-2">Fast, secure and delightful CMS for modern teams.</p>
-        </div>
-        <div>
-          <h6 class="font-semibold">Product</h6>
-          <ul class="mt-2 space-y-1">
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Integrations</a></li>
-            <li><a href="#">API</a></li>
-          </ul>
-        </div>
-        <div>
-          <h6 class="font-semibold">Resources</h6>
-          <ul class="mt-2 space-y-1">
-            <li><a href="#">Docs</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Status</a></li>
-          </ul>
-        </div>
-        <div>
-          <h6 class="font-semibold">Company</h6>
-          <ul class="mt-2 space-y-1">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="mt-6 border-t pt-6 text-center text-xs text-slate-400">© 2025 NovaCMS — Built with care.</div>
-    </footer>
+    <x-footer />
   </main>
 
   <!-- Small accessibility helper -->
