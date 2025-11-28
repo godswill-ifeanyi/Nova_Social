@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>NovaSocial — Share Your World</title>
+  
   <!-- Alertify CSS -->
-
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,7 +22,6 @@
       alertify.success('{{ session('success') }}');
     });
   </script>
-  
 @endif
 
 <!-- NAVBAR -->
@@ -79,7 +78,7 @@
     @foreach ($posts as $post)
       <x-post-item :post="$post" />
     @endforeach
-
+    
   </section>
 
   <!-- RIGHT SIDEBAR -->

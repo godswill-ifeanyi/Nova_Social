@@ -6,6 +6,16 @@
         <li><a class="block hover:text-indigo-600" href="{{ route('profile.edit') }}">👤 Profile</a></li>
         <li><a class="block hover:text-indigo-600" href="#">💬 Messages</a></li>
         <li><a class="block hover:text-indigo-600" href="#">⚙️ Settings</a></li>
+
+        <form method="POST" action="{{ route('logout') }}" onsubmit="return confirm('Are you sure to log out?')">
+            @csrf
+
+            <x-dropdown-link :href="route('logout')"
+                    onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                📴 {{ __('Log Out') }}
+            </x-dropdown-link>
+        </form>
       </ul>
     </div>
   </aside>
